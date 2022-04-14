@@ -4,4 +4,3 @@ class User:
         self.password = password
 
     access_token = ''
-    refresh_token = ''
