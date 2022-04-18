@@ -7,7 +7,7 @@ from config.custom_errors import AccessTokenIsMissed
 
 def login():
     response_ = requests.post(url=LOGIN_LINK,
-                              headers={'Authorization': os.environ.get('AUTHORIZATION_HEADER')})
+                              headers={'Authorization': os.environ.get('AUTHORIZATION_VALUE')})
     token = response_.json().get('token')
     if token is None:
         logging.error('Cannot get token from login request.')
