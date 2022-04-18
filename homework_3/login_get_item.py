@@ -10,7 +10,7 @@ def user_login(user):
     access_token = response_.json().get('access_token')
     if access_token is None:
         app.logger.error('Cannot get token from login request, access_token = None')
-        raise AccessTokenWasNotCreated('Cannot get token form login request, access_token = None')
+        raise AccessTokenWasNotCreated('Cannot get token from login request, access_token = None')
     user.access_token = access_token
     return user
 
