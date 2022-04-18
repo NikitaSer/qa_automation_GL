@@ -1,0 +1,2 @@
+class AccessTokenIsMissed(Exception):
+    pass
