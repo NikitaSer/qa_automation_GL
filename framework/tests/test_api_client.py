@@ -7,5 +7,6 @@ def test_login_successful():
     api_client.login()
     assert api_client.token is not None
 
+
 def test_root_folders():
-    api_client.get_folders()
+    assert api_client.get_folders() is None

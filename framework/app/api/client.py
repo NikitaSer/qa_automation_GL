@@ -1,6 +1,8 @@
+import logging
 from app.api.base_requests import BaseRequests
 from app.api.urls import Urls
 from config.config import Config
+from app.api.errors import AccessTokenIsMissed
 
 
 class ApiClient(BaseRequests):
@@ -11,7 +13,11 @@ class ApiClient(BaseRequests):
     def login(self):
         """Method to execute login"""
         r = self.post(path=Urls.LOGIN, headers={'Authorization': Config.LOGIN_TOKEN})
-        self.token = r.json().get('token')
+        token = r.json().get('token')
+        if token is None:
+            logging.error('Cannot get token from login request.')
+            raise AccessTokenIsMissed('Cannot get token from login request.')
+        self.token = token
 
 
     def get_folders(self):
