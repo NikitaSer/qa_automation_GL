@@ -9,11 +9,12 @@ class BaseRequests:
         """Method to concat base url and api path"""
         return Config.BASE_URL + url
 
-    def get(self, path, headers):
+    def get(self, url, *args, **kwargs):
         """Reimplementation of GET method"""
-        url = self.form_url(path)
-        return requests.get(url=url, headers=headers)
+        url = self.form_url(url=url)
+        return requests.get(url=url, *args, **kwargs)
 
-    def post(self, path, headers):
-        url = self.form_url(path)
-        return requests.post(url=url, headers=headers)
+    def post(self, url, *args, **kwargs):
+        """Reimplementation of POST method"""
+        url = self.form_url(url=url)
+        return requests.post(url=url, *args, **kwargs)
