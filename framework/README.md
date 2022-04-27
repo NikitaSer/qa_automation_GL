@@ -2,6 +2,11 @@ Command to run tests:
 
 > pytest .
 
+In order to debug or to see any standard output use -s flag is equivalent to --capture=no:
+
+> pytest -s .
+
+
 
 Info about test framework:
 
