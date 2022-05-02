@@ -7,7 +7,7 @@ In order to debug or to see any standard output use -s flag is equivalent to --c
 > pytest -s .
 
 In order to see detailed pytest output use -v (verbose) flag:
-> pytest -v
+> pytest -v .
 
 \
 Info about test framework:
