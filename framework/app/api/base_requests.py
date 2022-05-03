@@ -12,6 +12,7 @@ class BaseRequests:
     def get(self, url, *args, **kwargs):
         """Reimplementation of GET method"""
         url = self.form_url(url=url)
+        logger.debug(f"Request: {url} will be send now")
         return requests.get(url=url, *args, **kwargs)
 
     def post(self, url, *args, **kwargs):
