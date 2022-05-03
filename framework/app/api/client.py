@@ -19,6 +19,8 @@ class ApiClient(BaseRequests):
         if token is None:
             logging.error("Cannot get token from login request.")
             raise AccessTokenIsMissed("Cannot get token from login request.")
+            
+        self.set_token(token)
         self.token = token
 
     def get_files_in_root(self):
