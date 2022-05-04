@@ -11,7 +11,7 @@ class LoginPage(BasePage):
     PASS_FIELD = (By.ID, "password")
     LOGIN_BTN = (By.ID, "signInButton")
     LOGIN_MSG_ERR = (By.ID, "message-id")
-    POP_UP_OK = (By.CSS_SELECTOR, ".css-jckfdu")
+    POP_UP_OK_BTN = (By.CSS_SELECTOR, ".css-jckfdu")
     SIGN_UP = (By.CSS_SELECTOR, "[href='/register']")
 
     def __init__(self, driver):
@@ -21,7 +21,7 @@ class LoginPage(BasePage):
         """Method for perform user's login"""
         url = form_url(Urls.LOGIN)
         self.driver.get(url)
-        self.click(self.POP_UP_OK)
+        self.click(self.POP_UP_OK_BTN)
         self.enter_text(text=username, element=self.USERNAME_FIELD)
         self.enter_text(text=password, element=self.PASS_FIELD)
         self.click(element=self.LOGIN_BTN)
