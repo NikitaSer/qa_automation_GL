@@ -1,3 +1,5 @@
+import logging
+
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
@@ -35,5 +37,6 @@ class BasePage:
                 EC.presence_of_element_located(element)
             )
         except TimeoutException:
-            return False
+            logging.error(f"Cant find element={element} for the timeout={timeout}s")
+            raise TimeoutException(f"Cant find element={element} for the timeout={timeout}s")
         return True
