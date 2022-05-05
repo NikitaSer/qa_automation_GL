@@ -15,5 +15,7 @@ def api_session():
 @pytest.fixture(scope="session")
 def ui_app():
     """Fixture for initializing web app instance CosmosIDUI()"""
-    yield CosmosIDUI(browser)
-    CosmosIDUI.quit()
+    app = CosmosIDUI(browser)
+    app.launch_browser()
+    yield app
+    app.quit()
