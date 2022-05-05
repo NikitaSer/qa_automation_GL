@@ -15,6 +15,5 @@ def api_session():
 @pytest.fixture(scope="session")
 def ui_app():
     """Fixture for initializing web app instance CosmosIDUI()"""
-    driver = webdriver.Chrome()
-    yield CosmosIDUI(driver)
-    driver.quit()
+    yield CosmosIDUI(browser)
+    CosmosIDUI.quit()
