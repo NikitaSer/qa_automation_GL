@@ -28,8 +28,8 @@ class LoginPage(BasePage):
 
     def assert_login_failed(self):
         """Method for check that incorrect credentials message is present"""
-        self.is_element_present(self.LOGIN_MSG_ERR)
+        return self.is_element_present(self.LOGIN_MSG_ERR)
 
     def assert_sign_up_link_is_present(self):
         """Method for check that sign-up link is present"""
-        self.is_element_present(self.SIGN_UP)
+        return self.is_element_present(self.SIGN_UP)
