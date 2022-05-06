@@ -2,7 +2,7 @@ import logging
 from app.api.base_requests import BaseRequests
 from app.api.urls import Urls
 from config.config import Config
-from app.api.errors import AccessTokenIsMissed
+from app.api.exceptions import AccessTokenIsMissed
 
 
 class ApiClient(BaseRequests):
