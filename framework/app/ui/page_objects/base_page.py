@@ -38,5 +38,7 @@ class BasePage:
             )
         except TimeoutException:
             logging.error(f"Cant find element={element} for the timeout={timeout}s")
-            raise TimeoutException(f"Cant find element={element} for the timeout={timeout}s")
+            raise TimeoutException(
+                f"Cant find element={element} for the timeout={timeout}s"
+            )
         return True

@@ -1,5 +1,4 @@
 import pytest
-from selenium import webdriver
 from app.api.client import ApiClient
 from app.ui.cosmos_id_ui import CosmosIDUI
 
@@ -13,9 +12,10 @@ def api_session():
 
 
 @pytest.fixture(scope="session")
-def ui_app():
+def ui_app(request):
     """Fixture for initializing web app instance CosmosIDUI()"""
-    app = CosmosIDUI(browser)
+    browser = request.config.getoption("browser")
+    app = CosmosIDUI(browser=browser)
     app.launch_browser()
     yield app
-    app.quit()
+    app.close_browser()

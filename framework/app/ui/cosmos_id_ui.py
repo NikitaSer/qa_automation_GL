@@ -1,16 +1,20 @@
 from lib2to3.pgen2 import driver
 from app.ui.page_objects.login_page import LoginPage
+from app.providers.browsers import Browsers
+from config.config import Config
 
 
 class CosmosIDUI:
     """Class defining web app"""
 
     def __init__(self, browser):
-        self.driver = BrowsersProvider.get_browser(browser)
-        self.login_page = LoginPage(driver)
+        self.driver = Browsers.get_browser(browser).init_driver()
+        self.login_page = LoginPage(self.driver)
 
     def launch_browser(self):
-        self.driver.get("")
+        """Method for opening browser on the BASE_URL"""
+        self.driver.get(url=Config.BASE_URL)
 
-    def quit(self):
-        sefl.driver.terminate()
+    def close_browser(self):
+        """Method for closing browser"""
+        self.driver.quit()
