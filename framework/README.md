@@ -1,11 +1,12 @@
-Command to run tests:
+In order to run API tests use the following command:
+> pytest tests/test_api_client.py
 
-> pytest .
+\
+In order to run UI tests you need to specify browser parameter. For example, the test from tests/test_ui.py will run for Chrome browser:
 
-In order to debug or to see any standard output use -s flag is equivalent to --capture=no:
+> pytest --browser=chrome tests/test_ui.py
 
-> pytest -s .
-
+\
 In order to see detailed pytest output use -v (verbose) flag:
 > pytest -v .
 
