@@ -2,7 +2,7 @@ import logging
 
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-
+from config.config import Config
 from selenium.webdriver.support.wait import WebDriverWait
 
 
@@ -30,7 +30,7 @@ class BasePage:
         element = self.driver.find_element(*element)
         return element
 
-    def is_element_present(self, element, timeout=2):
+    def is_element_present(self, element, timeout=Config.TIMEOUT):
         """Method-waiter, checking that element is present on the page"""
         try:
             WebDriverWait(self.driver, timeout=timeout).until(

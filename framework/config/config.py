@@ -6,3 +6,5 @@ class Config:
 
     BASE_URL = "https://app.cosmosid.com"
     LOGIN_TOKEN = os.environ.get("LOGIN_TOKEN", None)
+
+    TIMEOUT = 2
