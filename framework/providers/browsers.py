@@ -37,6 +37,9 @@ class Browsers:
     @staticmethod
     def get_browser(browser):
         """Method for retrieving browser object according to the request's parameter"""
-        _browsers = {"chrome": Chrome(), "firefox": Firefox()}
+        _browsers = {"chrome": Chrome, "firefox": Firefox}
+        browser = _browsers.get(browser)
+        if browser is None:
+            raise Exception("No registered browser. Please register before usage")
 
-        return _browsers.get(browser)
+        return browser()
