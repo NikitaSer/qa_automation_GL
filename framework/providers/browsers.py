@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from framework.app.exceptions import IncorrectBrowserParameter
 
 
 class Chrome:
@@ -40,6 +41,5 @@ class Browsers:
         _browsers = {"chrome": Chrome, "firefox": Firefox}
         browser = _browsers.get(browser)
         if browser is None:
-            raise Exception("No registered browser. Please register before usage")
-
+            raise IncorrectBrowserParameter("No registered browser. Please register before usage")
         return browser()
