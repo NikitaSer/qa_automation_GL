@@ -1,5 +1,5 @@
 import urllib
-from config.config import Config
+from framework.config.config import Config
 
 
 def form_url(url):
