@@ -2,7 +2,7 @@ import logging
 
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from config.config import Config
+from framework.config.config import Config
 from selenium.webdriver.support.wait import WebDriverWait
 
 

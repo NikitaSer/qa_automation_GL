@@ -1,6 +1,6 @@
 import pytest
-from app.api.client import ApiClient
-from app.ui.cosmos_id_ui import CosmosIDUI
+from framework.app.api.client import ApiClient
+from framework.app.ui.cosmos_id_ui import CosmosIDUI
 
 
 @pytest.fixture(scope="session")

@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
-from tools.utils import form_url
-from app.ui.urls import Urls
-from app.ui.page_objects.base_page import BasePage
+from framework.tools.utils import form_url
+from framework.app.ui.urls import Urls
+from framework.app.ui.page_objects.base_page import BasePage
 
 
 class LoginPage(BasePage):

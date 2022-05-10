@@ -1,8 +1,8 @@
 import logging
-from app.api.base_requests import BaseRequests
-from app.api.urls import Urls
-from config.config import Config
-from app.api.exceptions import AccessTokenIsMissed
+from framework.app.api.base_requests import BaseRequests
+from framework.app.api.urls import Urls
+from framework.config.config import Config
+from framework.app.api.exceptions import AccessTokenIsMissed
 
 
 class ApiClient(BaseRequests):

@@ -1,5 +1,5 @@
 import requests
-from tools.utils import form_url
+from framework.tools.utils import form_url
 
 
 class BaseRequests:
