@@ -1,6 +1,6 @@
-from app.ui.page_objects.login_page import LoginPage
-from providers.browsers import Browsers
-from config.config import Config
+from framework.app.ui.page_objects.login_page import LoginPage
+from framework.providers.browsers import Browsers
+from framework.config.config import Config
 
 
 class CosmosIDUI:
